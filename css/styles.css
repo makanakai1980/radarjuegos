@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+
+
+
+.container {
+    width: 80%;
+    max-width: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.back {
+    background-color: #2ecc71;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+/* Estilos previamente definidos */
+
+.back-content {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+/* Estilos adicionales para efecto de volteo */
+.card.show-answer .front {
+    transform: rotateY(-180deg);
+}
+
+.card.show-answer .back {
+    transform: rotateY(0deg);
+}
+
+.question {
+    font-size: 48px; /* Ajusta el tamaño del texto de la pregunta según sea necesario */
+}
+.question-text {
+    font-size: 32px; /* Ajusta el tamaño del texto de la pregunta según sea necesario */
+}
+
